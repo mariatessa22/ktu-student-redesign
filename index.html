@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APJ Abdul Kalam Technological University (KTU) | Student Services Portal</title>
-  <meta name="description" content="Official student portal for APJ Abdul Kalam Technological University (KTU). Access examination registration, semester results, timetables, academic calendars, and circulars.">
+  <title>Student Portal Login | APJ Abdul Kalam Technological University (KTU)</title>
+  <meta name="description" content="Official Student Services Portal Sign In for APJ Abdul Kalam Technological University (KTU). Access examination registration, timetables, and semester results.">
   
   <!-- Fonts: Manrope for headings, DM Sans for body text -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,22 +13,12 @@
   
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="login-page-bg">
 
-  <!-- ANNOUNCEMENT TICKER -->
-  <div class="ticker-bar">
-    <div class="container ticker-container">
-      <span class="ticker-badge">URGENT</span>
-      <span class="ticker-text">B.Tech S8 Regular & Supplementary Exam Registration extended to Oct 15, 2026. <a href="#" data-switch-view="examination" class="ticker-link">Register Now</a></span>
-    </div>
-  </div>
-
-  <!-- SITE HEADER WITH VIEW NAVIGATION & LOGIN LINK -->
-  <header class="site-header" id="mainHeader">
+  <!-- TOP BRANDING BAR -->
+  <header class="login-page-header">
     <div class="container header-container">
-      
-      <!-- BRAND LOGO -->
-      <a href="index.html" class="brand-logo" aria-label="KTU Home">
+      <a href="login.html" class="brand-logo" aria-label="KTU Portal">
         <span class="logo-pill">KTU</span>
         <div class="logo-title-group">
           <span class="univ-name">APJ ABDUL KALAM</span>
@@ -36,734 +26,104 @@
         </div>
       </a>
 
-      <!-- PRIMARY VIEW NAVIGATION SWITCHER -->
-      <nav class="view-nav" aria-label="Main Navigation">
-        <button class="nav-tab active" data-view="home" id="tabHome">
-          <span>Home</span>
-        </button>
-
-        <div class="nav-dropdown-wrapper">
-          <button class="nav-tab" data-view="examination" id="tabExam">
-            <span>Examinations</span>
-            <svg class="chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          
-          <!-- EXAMINATION MEGA DROPDOWN -->
-          <div class="nav-dropdown-menu" id="menuExam">
-            <a href="#" data-switch-view="examination" class="menu-item highlight">
-              <strong>Exam Registration & Fee Payment</strong>
-              <span>Register for S8/S6 Regular & Supplementary Exams</span>
-            </a>
-            <a href="#" data-switch-view="examination" class="menu-item">
-              <strong>Download Exam Timetables (PDF)</strong>
-              <span>Branchwise semester schedules for Nov 2026</span>
-            </a>
-            <a href="#" data-switch-view="examination" class="menu-item">
-              <strong>Hall Ticket Portal</strong>
-              <span>Verify college approval and print hall tickets</span>
-            </a>
-            <a href="#" data-switch-view="examination" class="menu-item">
-              <strong>Examination Forms & Circulars</strong>
-              <span>Supplementary application, transcript & migration forms</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="nav-dropdown-wrapper">
-          <button class="nav-tab" data-view="results" id="tabResults">
-            <span>Results</span>
-            <svg class="chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </button>
-          
-          <!-- RESULTS MEGA DROPDOWN -->
-          <div class="nav-dropdown-menu" id="menuResults">
-            <a href="#" data-switch-view="results" class="menu-item highlight">
-              <strong>Check Semester Results (Instant)</strong>
-              <span>Enter Register No & DOB to fetch grade sheet</span>
-            </a>
-            <a href="#" data-switch-view="results" class="menu-item">
-              <strong>Apply for Revaluation / Answer Copy</strong>
-              <span>Submit revaluation request & fee payment</span>
-            </a>
-            <a href="#" data-switch-view="results" class="menu-item">
-              <strong>Recent Results Published</strong>
-              <span>B.Tech S8, M.Tech S2, MCA S4 & B.Arch S10</span>
-            </a>
-          </div>
-        </div>
-
-        <a href="#academic" class="nav-tab-link">Academic</a>
-        <a href="#university" class="nav-tab-link">University Info</a>
-      </nav>
-
-      <!-- RIGHT HEADER ACTIONS -->
       <div class="header-actions">
-        <button class="btn-search-trigger" id="searchModalOpen" aria-label="Search">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-        </button>
-
-        <a href="login.html" class="btn-login-header" id="headerLoginBtn">
-          <span>Student Login</span>
-        </a>
-
-        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Menu">
-          <span></span><span></span>
-        </button>
+        <a href="portal.html" class="btn-outline-pill">Explore Guest Portal</a>
       </div>
-
     </div>
   </header>
 
-  <!-- MOBILE MENU DRAWER -->
-  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <div class="mobile-drawer-header">
-      <span class="logo-pill">KTU</span>
-      <button class="mobile-close" id="mobileDrawerClose">&times;</button>
-    </div>
-    <div class="mobile-drawer-body">
-      <button class="mobile-nav-btn active" data-view="home">Home</button>
-      <button class="mobile-nav-btn" data-view="examination">Examinations Portal</button>
-      <button class="mobile-nav-btn" data-view="results">Results Portal</button>
-      <a href="login.html" class="mobile-nav-btn lavender">Student Sign In</a>
-      <a href="#academic" class="mobile-link">Academic Calendar</a>
-      <a href="#university" class="mobile-link">University Info</a>
-    </div>
-  </div>
-
-
-  <!-- MAIN SWAPPABLE PORTAL VIEWS -->
-  <main id="mainContent">
-
-    <!-- =================================================================== -->
-    <!-- VIEW 1: HOMEPAGE / LANDING PAGE (SOFT LAVENDER & CREAM THEME) -->
-    <!-- =================================================================== -->
-    <div class="view-section active-view" id="view-home">
-      
-      <!-- HERO SECTION -->
-      <section class="section-hero">
-        <div class="container hero-container">
-          
-          <div class="hero-left-col">
-            <span class="hero-badge">OFFICIAL STUDENT PORTAL</span>
-            <h1 class="hero-title">
-              Everything <br>
-              you need, <span class="highlight-lavender-text">in one place.</span>
-            </h1>
-            <p class="hero-sub">Access examinations, semester results, academic timetables, and university updates with zero friction.</p>
-            
-            <div class="hero-cta-group">
-              <button class="btn-black-pill" data-switch-view="results">Check Semester Results</button>
-              <button class="btn-lavender-pill" data-switch-view="examination">Exam Registration</button>
-              <a href="login.html" class="btn-outline-pill">Student Login</a>
-            </div>
-          </div>
-
-          <!-- SOFT LAVENDER HERO TASK BOX -->
-          <div class="hero-task-box">
-            <span class="box-tag">INSTANT TASK SEARCH</span>
-            <h2>What are you looking for?</h2>
-            
-            <form class="hero-search-form" id="heroSearchForm" onsubmit="return false;">
-              <input type="text" id="heroSearchInput" placeholder="e.g. S8 Results, Timetable, Fee Payment..." autocomplete="off">
-              <button type="submit" class="btn-black-pill-sm">Search</button>
-            </form>
-
-            <div class="hero-tags-row">
-              <span class="tags-title">Quick Links:</span>
-              <button class="tag-chip" data-query="S8 Result">B.Tech S8 Results</button>
-              <button class="tag-chip" data-query="Exam Registration">Exam Fee Payment</button>
-              <button class="tag-chip" data-query="Timetable">Timetables (PDF)</button>
-              <button class="tag-chip" data-query="Revaluation">Revaluation Form</button>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- SECTION 01: STUDENT QUICK ACTIONS (FLYING PHOENIX 2x2 CARDS) -->
-      <section class="section-quick-actions" id="quick-actions">
-        <div class="container">
-          
-          <div class="section-header-editorial">
-            <span class="section-num">01</span>
-            <h2 class="section-heading">Student Tasks & Direct Portals</h2>
-            <span class="section-desc">Prioritized student tasks. Most requested services first.</span>
-          </div>
-
-          <!-- 2x2 SPACIOUS GRID WITH SOFT LAVENDER CARDS AND ARROW BUTTONS -->
-          <div class="actions-grid-2x2">
-            
-            <!-- CARD 01: SEMESTER RESULTS -->
-            <div class="card-phoenix lavender-card">
-              <div class="card-header-row">
-                <span class="card-index">01</span>
-                <button class="arrow-circle-btn black" data-switch-view="results" aria-label="Open Results Portal">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </button>
-              </div>
-              <div class="card-content-block">
-                <span class="card-badge dark">MOST POPULAR</span>
-                <h3 class="card-title">Semester Results & Grade Sheets</h3>
-                <p class="card-text">Search B.Tech, M.Tech, MCA, MBA & B.Arch examination results with Register Number and Date of Birth.</p>
-              </div>
-              <div class="card-action-row">
-                <button class="btn-black-pill" data-switch-view="results">Open Results Portal</button>
-              </div>
-            </div>
-
-            <!-- CARD 02: EXAM REGISTRATION -->
-            <div class="card-phoenix lavender-card">
-              <div class="card-header-row">
-                <span class="card-index">02</span>
-                <button class="arrow-circle-btn black" data-switch-view="examination" aria-label="Open Exam Registration">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </button>
-              </div>
-              <div class="card-content-block">
-                <span class="card-badge urgent">CLOSES OCT 15</span>
-                <h3 class="card-title">Exam Registration & Fee Payment</h3>
-                <p class="card-text">Register for upcoming regular & supplementary end-semester examinations and download verified hall tickets.</p>
-              </div>
-              <div class="card-action-row">
-                <button class="btn-black-pill" data-switch-view="examination">Register Now</button>
-              </div>
-            </div>
-
-            <!-- CARD 03: EXAM TIMETABLE -->
-            <div class="card-phoenix cream-card">
-              <div class="card-header-row">
-                <span class="card-index">03</span>
-                <button class="arrow-circle-btn outline" data-switch-view="examination" aria-label="View Exam Timetable">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="7" x2="17" y2="17"></line><polyline points="17 7 17 17 7 17"></polyline></svg>
-                </button>
-              </div>
-              <div class="card-content-block">
-                <h3 class="card-title">Exam Timetables & Schedules</h3>
-                <p class="card-text">View and download official date sheets for all engineering branches for November 2026 exams.</p>
-              </div>
-              <div class="card-action-row">
-                <a href="#exam-timetable" class="card-link-bold" data-switch-view="examination">Download PDF Timetables</a>
-              </div>
-            </div>
-
-            <!-- CARD 04: SYLLABUS & ACADEMIC CALENDAR -->
-            <div class="card-phoenix cream-card">
-              <div class="card-header-row">
-                <span class="card-index">04</span>
-                <button class="arrow-circle-btn outline" data-switch-view="home" aria-label="View Syllabus">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="7" x2="17" y2="17"></line><polyline points="17 7 17 17 7 17"></polyline></svg>
-                </button>
-              </div>
-              <div class="card-content-block">
-                <h3 class="card-title">Syllabus & Academic Scheme</h3>
-                <p class="card-text">Access 2019 & 2024 scheme course structures, credit rules, elective lists, and academic calendar dates.</p>
-              </div>
-              <div class="card-action-row">
-                <a href="#academic" class="card-link-bold">View Academic Scheme</a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- SECTION 02: CRUCIAL DEADLINES (DEEP CHARCOAL CONTRAST SECTION) -->
-      <section class="section-dark-block" id="deadlines">
-        <div class="container">
-          
-          <div class="dark-section-header">
-            <span class="section-num light">02</span>
-            <h2 class="dark-heading">Crucial Dates & Action Deadlines</h2>
-            <span class="dark-sub">Time-sensitive academic requirements and cutoffs.</span>
-          </div>
-
-          <div class="deadlines-list-spacious">
-            
-            <!-- DEADLINE ROW 1 -->
-            <div class="deadline-row-card urgent-border">
-              <div class="date-square">
-                <span class="date-day">15</span>
-                <span class="date-month">OCT 2026</span>
-              </div>
-              <div class="deadline-info-block">
-                <div class="tag-meta-line">
-                  <span class="badge-urgent-red">HIGH PRIORITY</span>
-                  <span class="affects-lbl">Affects: B.Tech S8 Students</span>
-                </div>
-                <h3>B.Tech S8 Regular & Supplementary Exam Fee Payment</h3>
-                <p>Last date for online registration and examination fee payment through college portals without fine.</p>
-              </div>
-              <div class="deadline-cta">
-                <button class="btn-lavender-pill" data-switch-view="examination">Pay Fee / Register</button>
-              </div>
-            </div>
-
-            <!-- DEADLINE ROW 2 -->
-            <div class="deadline-row-card">
-              <div class="date-square">
-                <span class="date-day">20</span>
-                <span class="date-month">OCT 2026</span>
-              </div>
-              <div class="deadline-info-block">
-                <div class="tag-meta-line">
-                  <span class="badge-lavender-tag">MOOC CREDITS</span>
-                  <span class="affects-lbl">Affects: All UG/PG Programmes</span>
-                </div>
-                <h3>SWAYAM / NPTEL MOOC Credit Transfer Submission</h3>
-                <p>Submission of online course completion certificates for elective credit transfer approval.</p>
-              </div>
-              <div class="deadline-cta">
-                <a href="#notifications" class="btn-outline-white">View Details</a>
-              </div>
-            </div>
-
-            <!-- DEADLINE ROW 3 -->
-            <div class="deadline-row-card">
-              <div class="date-square">
-                <span class="date-day">24</span>
-                <span class="date-month">OCT 2026</span>
-              </div>
-              <div class="deadline-info-block">
-                <div class="tag-meta-line">
-                  <span class="badge-lavender-tag">REVALUATION</span>
-                  <span class="affects-lbl">Affects: B.Tech S6 Students</span>
-                </div>
-                <h3>Revaluation & Answer Script Copy Request Window</h3>
-                <p>Apply online for answer book copy verification and revaluation for B.Tech S6 examinations.</p>
-              </div>
-              <div class="deadline-cta">
-                <button class="btn-outline-white" data-switch-view="results">Apply Revaluation</button>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- SECTION 03: UPCOMING EXAM SCHEDULE TABLE -->
-      <section class="section-schedule" id="upcoming-exams">
-        <div class="container">
-          
-          <div class="section-header-editorial">
-            <span class="section-num">03</span>
-            <h2 class="section-heading">Upcoming Examination Sessions</h2>
-            <button class="btn-black-pill" data-switch-view="examination">View Full Schedule</button>
-          </div>
-
-          <div class="schedule-card-box">
-            <div class="schedule-card-header">
-              <span>November 2026 Examinations</span>
-              <span class="sub">2026-27 Academic Year</span>
-            </div>
-
-            <div class="schedule-table">
-              <div class="table-row head">
-                <div>Monday</div>
-                <div>Tuesday</div>
-                <div>Wednesday</div>
-                <div>Thursday</div>
-                <div>Friday</div>
-              </div>
-              <div class="table-row body">
-                <div class="cell">
-                  <span class="date">Nov 02</span>
-                  <span class="info">Hall Ticket Release</span>
-                </div>
-                <div class="cell">
-                  <span class="date">Nov 03</span>
-                  <span class="info">Internal Marks Upload</span>
-                </div>
-                <div class="cell highlight-lavender">
-                  <span class="date">Nov 04</span>
-                  <strong class="title">B.Tech S8 Theory</strong>
-                  <span class="time">09:30 AM Session</span>
-                </div>
-                <div class="cell">
-                  <span class="date">Nov 05</span>
-                  <span class="info">Study Break</span>
-                </div>
-                <div class="cell highlight-lavender">
-                  <span class="date">Nov 06</span>
-                  <strong class="title">B.Tech S8 Electives</strong>
-                  <span class="time">09:30 AM Session</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- SECTION 04: OFFICIAL NOTIFICATIONS -->
-      <section class="section-notifications" id="notifications">
-        <div class="container">
-          
-          <div class="section-header-editorial">
-            <span class="section-num">04</span>
-            <h2 class="section-heading">Official Notifications</h2>
-            
-            <div class="filter-tabs-row" id="notifFilterTabs">
-              <button class="filter-tab active" data-filter="all">All Updates</button>
-              <button class="filter-tab" data-filter="examination">Examination</button>
-              <button class="filter-tab" data-filter="academic">Academic</button>
-              <button class="filter-tab" data-filter="circulars">Circulars</button>
-            </div>
-          </div>
-
-          <div class="notif-list-spacious" id="notifList">
-            
-            <article class="notif-item" data-category="examination">
-              <div class="notif-left">
-                <span class="badge-cat exam">EXAMINATION</span>
-                <span class="date">Oct 08, 2026</span>
-              </div>
-              <div class="notif-mid">
-                <h3>Extension of Examination Fee Payment for B.Tech S8 Regular & Supplementary Examinations</h3>
-                <p>The last date for submitting online examination applications without fine has been extended up to October 15, 2026.</p>
-              </div>
-              <div class="notif-right">
-                <a href="#" class="btn-outline-pill">PDF Circular (142 KB)</a>
-              </div>
-            </article>
-
-            <article class="notif-item" data-category="academic">
-              <div class="notif-left">
-                <span class="badge-cat academic">ACADEMIC</span>
-                <span class="date">Oct 05, 2026</span>
-              </div>
-              <div class="notif-mid">
-                <h3>Revised Guidelines for B.Tech Honors & Minor Degree Credit Eligibility (2024 Scheme)</h3>
-                <p>Detailed regulations regarding additional 18 credits requirement through MOOCs and departmental electives.</p>
-              </div>
-              <div class="notif-right">
-                <a href="#" class="btn-outline-pill">PDF Guidelines (320 KB)</a>
-              </div>
-            </article>
-
-            <article class="notif-item" data-category="examination">
-              <div class="notif-left">
-                <span class="badge-cat exam">EXAMINATION</span>
-                <span class="date">Oct 02, 2026</span>
-              </div>
-              <div class="notif-mid">
-                <h3>Publication of Revaluation Results: B.Tech S6 Regular Examinations (May 2026)</h3>
-                <p>Revaluation results published. Updated digital grade cards are now available on the student results portal.</p>
-              </div>
-              <div class="notif-right">
-                <button class="btn-black-pill-sm" data-switch-view="results">Check Results</button>
-              </div>
-            </article>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- SECTION 05: ACADEMIC EDITORIAL -->
-      <section class="section-academic-editorial" id="academic">
-        <div class="container">
-          <div class="editorial-grid-2col">
-            
-            <div class="editorial-col">
-              <span class="section-num">05</span>
-              <h2 class="editorial-heading">Transforming Technological Education in Kerala</h2>
-              <p class="editorial-lead">APJ Abdul Kalam Technological University coordinates, supervises, and standardizes engineering education across 150+ affiliated colleges.</p>
-              
-              <div class="lavender-feature-card">
-                <span class="tag-bold">2026 REGULATION HIGHLIGHT</span>
-                <h3>Industry-Aligned Curriculum & Credit System</h3>
-                <p>Incorporating mandatory industrial internships, AI & Green Energy tracks, and flexible credit transfers.</p>
-                <a href="#" class="link-purple">Download 2024 B.Tech Curriculum PDF</a>
-              </div>
-            </div>
-
-            <div class="editorial-col">
-              <div class="editorial-photo-card">
-                <img src="assets/images/ktu_campus.png" alt="KTU Engineering Campus Research Block" class="campus-photo">
-                <div class="photo-overlay">
-                  <h4>KTU Research & Innovation Hub</h4>
-                  <p>Fostering interdisciplinary PhD research, patent filing grants, and technology incubation.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 06: INSTITUTIONAL INFORMATION -->
-      <section class="section-institutional" id="university">
-        <div class="container">
-          
-          <div class="section-header-editorial">
-            <span class="section-num">06</span>
-            <h2 class="section-heading">Institutional Information & Welfare</h2>
-          </div>
-
-          <div class="inst-grid-3col">
-            
-            <div class="inst-card">
-              <h3>Suraksha Student Insurance</h3>
-              <p>Comprehensive medical and accident insurance coverage for all regular students enrolled in KTU affiliated institutions.</p>
-              <a href="#" class="link-purple">Claim Guidelines</a>
-            </div>
-
-            <div class="inst-card border-alert">
-              <h3>Anti-Ragging Squad & Helpline</h3>
-              <p>Zero tolerance for ragging. File confidential complaints online or reach out directly to the monitoring team.</p>
-              <div class="helpline-badge">Toll Free: <strong>1800-425-8522</strong></div>
-            </div>
-
-            <div class="inst-card">
-              <h3>Affiliated Colleges Directory</h3>
-              <p>Directory of government, aided, and self-financing engineering colleges, intake capacity, and NBA accreditation status.</p>
-              <a href="#" class="link-purple">Search Directory</a>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-    </div>
-
-    <!-- =================================================================== -->
-    <!-- VIEW 2: DEDICATED EXAMINATIONS PORTAL VIEW -->
-    <!-- =================================================================== -->
-    <div class="view-section" id="view-examination">
-      <div class="banner-dark-portal">
-        <div class="container">
-          <div class="breadcrumb">
-            <button class="b-link" data-switch-view="home">Home</button>
-            <span class="sep">/</span>
-            <span>Examinations Portal</span>
-          </div>
-          <h1 class="portal-heading">Examination Portal & Schedules</h1>
-          <p class="portal-sub">Centralized hub for exam fee payments, timetables, and official instructions.</p>
-        </div>
-      </div>
-
-      <div class="container portal-padding">
-        <div class="exam-hero-split">
-          
-          <!-- TASK BOX 1: EXAM REGISTRATION -->
-          <div class="task-card-portal lavender">
-            <span class="tag-task">PRIMARY SERVICE</span>
-            <h2>Exam Registration & Fee Payment</h2>
-            <p>Select your programme and log in to complete end-semester exam registration.</p>
-            
-            <div class="inline-form">
-              <label for="examRegProg" class="form-lbl">Select Programme</label>
-              <select class="form-select" id="examRegProg">
-                <option>B.Tech - Bachelor of Technology</option>
-                <option>M.Tech - Master of Technology</option>
-                <option>MCA - Master of Computer Applications</option>
-                <option>MBA - Master of Business Administration</option>
-                <option>B.Arch - Bachelor of Architecture</option>
-              </select>
-              <a href="login.html" class="btn-black-pill" id="btnLaunchExamReg">Proceed to Student Login</a>
-            </div>
-          </div>
-
-          <!-- TASK BOX 2: TIMETABLE DOWNLOADS -->
-          <div class="task-card-portal dark" id="exam-timetable">
-            <span class="tag-task light">TIMETABLE DIRECTORY</span>
-            <h2 class="light-title">Exam Timetables (November 2026)</h2>
-            <p class="light-sub">Download verified PDF examination date sheets published by the Controller of Examinations.</p>
-            
-            <div class="pdf-list-portal">
-              <a href="#" class="pdf-item-row">
-                <span>B.Tech S8 Regular/Supply Timetable (PDF)</span>
-                <span class="sz">450 KB</span>
-              </a>
-              <a href="#" class="pdf-item-row">
-                <span>B.Tech S6 Regular/Supply Timetable (PDF)</span>
-                <span class="sz">380 KB</span>
-              </a>
-              <a href="#" class="pdf-item-row">
-                <span>M.Tech S2 / MCA S4 Timetable (PDF)</span>
-                <span class="sz">290 KB</span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- =================================================================== -->
-    <!-- VIEW 3: DEDICATED RESULTS PORTAL VIEW -->
-    <!-- =================================================================== -->
-    <div class="view-section" id="view-results">
-      <div class="banner-dark-portal">
-        <div class="container">
-          <div class="breadcrumb">
-            <button class="b-link" data-switch-view="home">Home</button>
-            <span class="sep">/</span>
-            <span>Results Portal</span>
-          </div>
-          <h1 class="portal-heading">University Examination Results</h1>
-          <p class="portal-sub">Instant online grade sheet verification, revaluation tracking, and grade card downloads.</p>
-        </div>
-      </div>
-
-      <div class="container portal-padding">
+  <!-- MAIN LOGIN ENTRY CONTAINER -->
+  <main class="login-main-wrapper">
+    <div class="container">
+      <div class="login-editorial-grid">
         
-        <!-- SEARCH CARD -->
-        <div class="result-search-card">
-          <div class="search-card-header">
-            <div>
-              <span class="tag-task">DIGITAL VERIFICATION</span>
-              <h2>Fetch Semester Grade Sheet</h2>
-            </div>
-            
-            <!-- DEMO PRESETS -->
-            <div class="demo-preset-group">
-              <span class="preset-title">Test Sample Data:</span>
-              <button class="btn-lavender-pill-sm" id="demoResultBTechS8">Sample B.Tech S8 Pass</button>
-              <button class="btn-lavender-pill-sm" id="demoResultBTechS6">Sample B.Tech S6 Result</button>
+        <!-- LEFT COLUMN: EDITORIAL BRANDING & SECURITY STATEMENT -->
+        <div class="login-left-card">
+          <div class="brand-logo dark-theme-logo">
+            <span class="logo-pill lavender">KTU</span>
+            <div class="logo-title-group">
+              <span class="univ-name light-text">APJ ABDUL KALAM</span>
+              <span class="univ-sub light-sub">TECHNOLOGICAL UNIVERSITY</span>
             </div>
           </div>
 
-          <form id="resultsSearchForm">
-            <div class="form-grid-4col">
-              <div class="form-field">
-                <label for="resRegisterNo">Register Number <span class="req">*</span></label>
-                <input type="text" id="resRegisterNo" class="form-input" placeholder="e.g. TVE21CS045" required>
-              </div>
+          <div class="login-editorial-text">
+            <h2>Centralized Student Portal</h2>
+            <p>Official e-Governance Authentication System for enrolled engineering, architecture, and technology students across Kerala.</p>
+          </div>
 
-              <div class="form-field">
-                <label for="resSemester">Semester <span class="req">*</span></label>
-                <select id="resSemester" class="form-select" required>
-                  <option value="S8">Semester 8 (S8)</option>
-                  <option value="S7">Semester 7 (S7)</option>
-                  <option value="S6">Semester 6 (S6)</option>
-                  <option value="S5">Semester 5 (S5)</option>
-                </select>
-              </div>
+          <div class="login-image-frame">
+            <img src="assets/images/ktu_hero.png" alt="KTU Administration Headquarters" class="login-campus-img">
+            <div class="frame-badge">VERIFIED E-GOVERNANCE PORTAL</div>
+          </div>
 
-              <div class="form-field">
-                <label for="resExamType">Exam Session</label>
-                <select id="resExamType" class="form-select">
-                  <option value="regular">Regular Examination (Oct 2026)</option>
-                  <option value="supply">Supplementary Examination (May 2026)</option>
-                </select>
-              </div>
+          <div class="login-security-list">
+            <div class="security-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>SSL Encrypted Student Access</span>
+            </div>
+            <div class="security-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>Single Sign-On for Fees & Hall Tickets</span>
+            </div>
+          </div>
+        </div>
 
-              <div class="form-field">
-                <label for="resDOB">Date of Birth (DD/MM/YYYY) <span class="req">*</span></label>
-                <input type="text" id="resDOB" class="form-input" placeholder="15/08/2003" required>
-              </div>
+        <!-- RIGHT COLUMN: STANDALONE LOGIN FORM WITH REDIRECT -->
+        <div class="login-right-card">
+          <div class="login-form-header">
+            <h2>Welcome back.</h2>
+            <p>Sign in to continue to your student services.</p>
+          </div>
+
+          <form id="standaloneLoginForm" class="login-form" novalidate>
+            
+            <!-- INLINE ERROR MESSAGE ALERT CONTAINER -->
+            <div class="form-error-alert" id="loginErrorAlert" style="display: none;"></div>
+
+            <div class="form-field">
+              <label for="loginRegNo">Registration Number <span class="req">*</span></label>
+              <input type="text" id="loginRegNo" class="form-input" placeholder="e.g. TVE21CS045" autocomplete="username" required>
+              <span class="field-error-text" id="regNoError"></span>
             </div>
 
-            <div class="form-btn-row">
-              <button type="submit" class="btn-black-pill">View Digital Grade Card</button>
-              <button type="reset" class="btn-reset">Reset Fields</button>
+            <div class="form-field">
+              <label for="loginPassword">Password <span class="req">*</span></label>
+              <div class="password-input-wrapper">
+                <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password" autocomplete="current-password" required>
+                <button type="button" class="btn-toggle-pwd" id="togglePasswordBtn" aria-label="Show password">Show</button>
+              </div>
+              <span class="field-error-text" id="passwordError"></span>
             </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-black-pill full-width" id="btnSubmitLogin">Sign In & Continue to Portal</button>
+            </div>
+
+            <div class="login-footer-links">
+              <a href="portal.html" class="btn-text-link">Explore Portal as Guest</a>
+              <a href="https://app.ktu.edu.in/" target="_blank" rel="noopener noreferrer" class="link-forgot-pwd">Forgot Password?</a>
+            </div>
+
+            <!-- DEMONSTRATION NOTICE -->
+            <div class="login-demo-notice">
+              <span class="notice-title">AUTHENTICATION NOTICE</span>
+              <p>Official student login connects directly to KTU e-Governance e-services (`app.ktu.edu.in`). Entering valid credentials will log you into the student portal.</p>
+            </div>
+
           </form>
         </div>
 
-        <!-- RESULT RENDER OUTPUT AREA -->
-        <div id="resultsDisplayArea">
-          <div class="result-placeholder-box">
-            <h3>No Result Loaded Yet</h3>
-            <p>Enter Register Number and Date of Birth above, or click one of the sample demo buttons to view a live formatted grade card.</p>
-          </div>
-        </div>
-
       </div>
     </div>
-
   </main>
 
-  <!-- QUICK SEARCH MODAL -->
-  <div class="search-modal" id="searchModal" aria-hidden="true">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <input type="text" id="modalSearchInput" placeholder="Search tasks, results, timetables, or circulars..." autofocus>
-        <button class="modal-close" id="searchModalClose">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="hint-grid">
-          <button class="hint-card" data-trigger="results">
-            <strong>Check S8 / S6 Results</strong>
-            <span>Fetch digital semester grade card</span>
-          </button>
-          <button class="hint-card" data-trigger="examination">
-            <strong>Exam Registration & Fee</strong>
-            <span>Pay online fee for regular/supply exams</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SITE FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      
-      <div class="footer-brand-col">
-        <div class="brand-logo">
-          <span class="logo-pill lavender">KTU</span>
-          <div class="logo-title-group">
-            <span class="univ-name light-text">APJ ABDUL KALAM</span>
-            <span class="univ-sub light-sub">TECHNOLOGICAL UNIVERSITY</span>
-          </div>
-        </div>
-        <p class="footer-desc">State Technological University established by the Government of Kerala. Coordinating engineering and technological education.</p>
-        
-        <div class="footer-contacts">
-          <p>📍 CET Campus, Thiruvananthapuram, Kerala - 695016</p>
-          <p>📞 Phone: 0471-2598522, 2598524</p>
-          <p>✉️ Email: support@ktu.edu.in</p>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Student Portals</h4>
-        <ul>
-          <li><a href="#" data-switch-view="results">Results Portal</a></li>
-          <li><a href="#" data-switch-view="examination">Exam Registration</a></li>
-          <li><a href="#" data-switch-view="examination">Exam Timetables</a></li>
-          <li><a href="login.html">Student Login</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Governance</h4>
-        <ul>
-          <li><a href="#university">Suraksha Insurance</a></li>
-          <li><a href="#university">Anti-Ragging Cell</a></li>
-          <li><a href="#university">Affiliated Colleges</a></li>
-          <li><a href="#academic">Research Council</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Emergency Helplines</h4>
-        <div class="helpline-box">
-          <span>Student Helpdesk</span>
-          <strong>0471-2598522</strong>
-        </div>
-        <div class="helpline-box">
-          <span>Anti-Ragging Toll Free</span>
-          <strong>1800-425-8522</strong>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom-bar">
-      <div class="container bottom-flex">
-        <p>© 2026 APJ Abdul Kalam Technological University (KTU). All Rights Reserved.</p>
-        <div class="legal-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-        </div>
+  <footer class="login-simple-footer">
+    <div class="container footer-bar-flex">
+      <p>© 2026 APJ Abdul Kalam Technological University (KTU). All Rights Reserved.</p>
+      <div class="footer-links-row">
+        <a href="portal.html">Portal Home</a>
+        <a href="https://app.ktu.edu.in/" target="_blank" rel="noopener noreferrer">Official KTU e-Gov</a>
       </div>
     </div>
   </footer>
