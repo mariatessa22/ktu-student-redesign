@@ -115,7 +115,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .ticker-link:hover { text-decoration: underline; }
 
 /* SITE HEADER */
-.site-header {
+.site-header, .login-page-header {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -266,6 +266,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-lavender);
   transition: all 0.2s ease;
+
 }
 
 .btn-login-header:hover {
@@ -296,7 +297,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .view-section { display: none; }
 .view-section.active-view { display: block; }
 
-/* BUTTON STYLES (PLAIN CSS - NO EMOJIS) */
+/* BUTTON STYLES */
 .btn-black-pill {
   background-color: var(--bg-dark-main);
   color: var(--text-light-main);
@@ -792,7 +793,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .sgpa-score { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800; color: var(--text-lavender-dark); }
 .result-actions-bar { display: flex; gap: 1rem; }
 
-/* STUDENT LOGIN PAGE STYLES (SPACIOUS 2-COLUMN EDITORIAL) */
+/* STANDALONE LOGIN PAGE SPECIFIC STYLING (login.html) */
+.login-page-bg {
+  background-color: var(--bg-cream-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-main-wrapper {
+  flex: 1;
+  padding: 3.5rem 0 5rem;
+  display: flex;
+  align-items: center;
+}
+
 .login-editorial-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1001,6 +1016,32 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.8125rem;
   color: var(--text-dark-sub);
   line-height: 1.4;
+}
+
+.login-simple-footer {
+  background-color: var(--bg-dark-main);
+  color: var(--text-light-sub);
+  padding: 1.5rem 0;
+  font-size: 0.8125rem;
+  border-top: 1px solid var(--border-dark);
+}
+
+.footer-bar-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links-row a {
+  color: var(--bg-lavender-muted);
+  font-weight: 700;
 }
 
 /* SEARCH MODAL */

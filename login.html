@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal Login | APJ Abdul Kalam Technological University (KTU)</title>
+  <meta name="description" content="Official Student Services Portal Sign In for APJ Abdul Kalam Technological University (KTU). Access examination registration, timetables, and semester results.">
+  
+  <!-- Fonts: Manrope for headings, DM Sans for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..1000;1,9..40,300..1000&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page-bg">
+
+  <!-- TOP BRANDING BAR -->
+  <header class="login-page-header">
+    <div class="container header-container">
+      <a href="login.html" class="brand-logo" aria-label="KTU Portal">
+        <span class="logo-pill">KTU</span>
+        <div class="logo-title-group">
+          <span class="univ-name">APJ ABDUL KALAM</span>
+          <span class="univ-sub">TECHNOLOGICAL UNIVERSITY</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn-outline-pill">Explore Guest Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN LOGIN ENTRY CONTAINER -->
+  <main class="login-main-wrapper">
+    <div class="container">
+      <div class="login-editorial-grid">
+        
+        <!-- LEFT COLUMN: EDITORIAL BRANDING & SECURITY STATEMENT -->
+        <div class="login-left-card">
+          <div class="brand-logo dark-theme-logo">
+            <span class="logo-pill lavender">KTU</span>
+            <div class="logo-title-group">
+              <span class="univ-name light-text">APJ ABDUL KALAM</span>
+              <span class="univ-sub light-sub">TECHNOLOGICAL UNIVERSITY</span>
+            </div>
+          </div>
+
+          <div class="login-editorial-text">
+            <h2>Centralized Student Portal</h2>
+            <p>Official e-Governance Authentication System for enrolled engineering, architecture, and technology students across Kerala.</p>
+          </div>
+
+          <div class="login-image-frame">
+            <img src="assets/images/ktu_hero.png" alt="KTU Administration Headquarters" class="login-campus-img">
+            <div class="frame-badge">VERIFIED E-GOVERNANCE PORTAL</div>
+          </div>
+
+          <div class="login-security-list">
+            <div class="security-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>SSL Encrypted Student Access</span>
+            </div>
+            <div class="security-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>Single Sign-On for Fees & Hall Tickets</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: STANDALONE LOGIN FORM WITH REDIRECT -->
+        <div class="login-right-card">
+          <div class="login-form-header">
+            <h2>Welcome back.</h2>
+            <p>Sign in to continue to your student services.</p>
+          </div>
+
+          <form id="standaloneLoginForm" class="login-form" novalidate>
+            
+            <!-- INLINE ERROR MESSAGE ALERT CONTAINER -->
+            <div class="form-error-alert" id="loginErrorAlert" style="display: none;"></div>
+
+            <div class="form-field">
+              <label for="loginRegNo">Registration Number <span class="req">*</span></label>
+              <input type="text" id="loginRegNo" class="form-input" placeholder="e.g. TVE21CS045" autocomplete="username" required>
+              <span class="field-error-text" id="regNoError"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="loginPassword">Password <span class="req">*</span></label>
+              <div class="password-input-wrapper">
+                <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password" autocomplete="current-password" required>
+                <button type="button" class="btn-toggle-pwd" id="togglePasswordBtn" aria-label="Show password">Show</button>
+              </div>
+              <span class="field-error-text" id="passwordError"></span>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-black-pill full-width" id="btnSubmitLogin">Sign In & Continue to Portal</button>
+            </div>
+
+            <div class="login-footer-links">
+              <a href="index.html" class="btn-text-link">Explore Portal as Guest</a>
+              <a href="https://app.ktu.edu.in/" target="_blank" rel="noopener noreferrer" class="link-forgot-pwd">Forgot Password?</a>
+            </div>
+
+            <!-- DEMONSTRATION NOTICE -->
+            <div class="login-demo-notice">
+              <span class="notice-title">AUTHENTICATION NOTICE</span>
+              <p>Official student login connects directly to KTU e-Governance e-services (`app.ktu.edu.in`). Entering valid credentials will log you into the student portal.</p>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="login-simple-footer">
+    <div class="container footer-bar-flex">
+      <p>© 2026 APJ Abdul Kalam Technological University (KTU). All Rights Reserved.</p>
+      <div class="footer-links-row">
+        <a href="index.html">Portal Home</a>
+        <a href="https://app.ktu.edu.in/" target="_blank" rel="noopener noreferrer">Official KTU e-Gov</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

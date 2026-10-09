@@ -1,13 +1,92 @@
 /**
  * KTU (APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY) REDESIGN JS
  * Pure Static Vanilla JavaScript — No Frameworks, No Emojis.
- * Handles View Switching, Search Modal, Results Portal Engine, and Student Portal Login Validation.
+ * Handles Standalone Login Redirect, View Switching, Search Modal, and Results Engine.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
-  // 1. VIEW CONTROLLER (HOME, EXAMINATIONS, RESULTS, LOGIN)
+  // 1. STANDALONE LOGIN FORM & REDIRECT SYSTEM (login.html)
+  // =========================================================================
+  const standaloneLoginForm = document.getElementById('standaloneLoginForm');
+  const loginRegNo = document.getElementById('loginRegNo');
+  const loginPassword = document.getElementById('loginPassword');
+  const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+  const regNoError = document.getElementById('regNoError');
+  const passwordError = document.getElementById('passwordError');
+  const loginErrorAlert = document.getElementById('loginErrorAlert');
+
+  // Toggle Password Show/Hide
+  if (togglePasswordBtn && loginPassword) {
+    togglePasswordBtn.addEventListener('click', () => {
+      const isPwd = loginPassword.type === 'password';
+      loginPassword.type = isPwd ? 'text' : 'password';
+      togglePasswordBtn.textContent = isPwd ? 'Hide' : 'Show';
+      togglePasswordBtn.setAttribute('aria-label', isPwd ? 'Hide password' : 'Show password');
+    });
+  }
+
+  // Handle Login Validation & Redirect to index.html
+  if (standaloneLoginForm) {
+    standaloneLoginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Clear previous errors
+      if (regNoError) regNoError.textContent = '';
+      if (passwordError) passwordError.textContent = '';
+      if (loginErrorAlert) {
+        loginErrorAlert.style.display = 'none';
+        loginErrorAlert.textContent = '';
+      }
+
+      const regVal = loginRegNo ? loginRegNo.value.trim() : '';
+      const pwdVal = loginPassword ? loginPassword.value.trim() : '';
+
+      let isValid = true;
+
+      if (!regVal) {
+        if (regNoError) regNoError.textContent = 'Please enter your KTU Registration Number.';
+        isValid = false;
+      }
+
+      if (!pwdVal) {
+        if (passwordError) passwordError.textContent = 'Please enter your student password.';
+        isValid = false;
+      }
+
+      // Preserve registration number value if validation fails
+      if (!isValid) {
+        if (loginErrorAlert) {
+          loginErrorAlert.style.display = 'block';
+          loginErrorAlert.textContent = 'Please complete all required fields below.';
+        }
+        return;
+      }
+
+      // Clear password input immediately (Never store passwords in localStorage/sessionStorage!)
+      loginPassword.value = '';
+
+      // Render redirect notice and redirect into index.html
+      if (loginErrorAlert) {
+        loginErrorAlert.style.display = 'block';
+        loginErrorAlert.style.backgroundColor = '#EAE3F3';
+        loginErrorAlert.style.borderColor = '#B9A8D5';
+        loginErrorAlert.style.color = '#2C1E4A';
+        loginErrorAlert.innerHTML = `
+          <strong>Authentication Validated</strong><br>
+          Logging in student <strong>${regVal}</strong>... Redirecting to KTU Student Portal.
+        `;
+      }
+
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 700);
+    });
+  }
+
+  // =========================================================================
+  // 2. VIEW CONTROLLER (HOME, EXAMINATIONS, RESULTS IN index.html)
   // =========================================================================
   const viewSections = document.querySelectorAll('.view-section');
   const navTabs = document.querySelectorAll('.nav-tab, .mobile-nav-btn');
@@ -55,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 2. SEARCH & QUICK SEARCH MODAL
+  // 3. SEARCH & QUICK SEARCH MODAL
   // =========================================================================
   const searchModal = document.getElementById('searchModal');
   const searchModalOpen = document.getElementById('searchModalOpen');
@@ -127,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 3. NOTIFICATION CATEGORY FILTER TABS
+  // 4. NOTIFICATION CATEGORY FILTER TABS
   // =========================================================================
   const filterTabs = document.querySelectorAll('.filter-tab');
   const notifItems = document.querySelectorAll('.notif-item');
@@ -149,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 4. INTERACTIVE RESULTS PORTAL ENGINE (NO EMOJIS)
+  // 5. INTERACTIVE RESULTS PORTAL ENGINE
   // =========================================================================
   const resultsForm = document.getElementById('resultsSearchForm');
   const resultsDisplayArea = document.getElementById('resultsDisplayArea');
@@ -343,81 +422,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (semInput) semInput.value = "S6";
       if (dobInput) dobInput.value = "22/11/2004";
       handleResultSearch("TVE21CS088");
-    });
-  }
-
-  // =========================================================================
-  // 5. STUDENT LOGIN FUNCTIONALITY & VALIDATION
-  // =========================================================================
-  const loginForm = document.getElementById('studentLoginForm');
-  const loginRegNo = document.getElementById('loginRegNo');
-  const loginPassword = document.getElementById('loginPassword');
-  const togglePasswordBtn = document.getElementById('togglePasswordBtn');
-  const regNoError = document.getElementById('regNoError');
-  const passwordError = document.getElementById('passwordError');
-  const loginErrorAlert = document.getElementById('loginErrorAlert');
-
-  // Toggle Password Show/Hide
-  if (togglePasswordBtn && loginPassword) {
-    togglePasswordBtn.addEventListener('click', () => {
-      const isPwd = loginPassword.type === 'password';
-      loginPassword.type = isPwd ? 'text' : 'password';
-      togglePasswordBtn.textContent = isPwd ? 'Hide' : 'Show';
-      togglePasswordBtn.setAttribute('aria-label', isPwd ? 'Hide password' : 'Show password');
-    });
-  }
-
-  // Login Form Submission & Validation
-  if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Clear previous error messages
-      if (regNoError) regNoError.textContent = '';
-      if (passwordError) passwordError.textContent = '';
-      if (loginErrorAlert) {
-        loginErrorAlert.style.display = 'none';
-        loginErrorAlert.textContent = '';
-      }
-
-      const regVal = loginRegNo ? loginRegNo.value.trim() : '';
-      const pwdVal = loginPassword ? loginPassword.value.trim() : '';
-
-      let isValid = true;
-
-      if (!regVal) {
-        if (regNoError) regNoError.textContent = 'Please enter your KTU Registration Number.';
-        isValid = false;
-      }
-
-      if (!pwdVal) {
-        if (passwordError) passwordError.textContent = 'Please enter your student password.';
-        isValid = false;
-      }
-
-      // Preserve registration number if validation fails
-      if (!isValid) {
-        if (loginErrorAlert) {
-          loginErrorAlert.style.display = 'block';
-          loginErrorAlert.textContent = 'Please complete all required fields below.';
-        }
-        return;
-      }
-
-      // Validation Success -> Clear password input (NEVER store in localStorage or sessionStorage!)
-      loginPassword.value = '';
-
-      // Render clear demonstration response (No fabricated live login or hardcoded session fake)
-      if (loginErrorAlert) {
-        loginErrorAlert.style.display = 'block';
-        loginErrorAlert.style.backgroundColor = '#EAE3F3';
-        loginErrorAlert.style.borderColor = '#B9A8D5';
-        loginErrorAlert.style.color = '#2C1E4A';
-        loginErrorAlert.innerHTML = `
-          <strong>Frontend Demonstration Verified</strong><br>
-          Validation passed for student <strong>${regVal}</strong>. Official authentication is processed via KTU e-Governance portal.
-        `;
-      }
     });
   }
 
